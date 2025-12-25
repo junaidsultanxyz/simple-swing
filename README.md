@@ -50,7 +50,7 @@ ___
 
 | Release Date      | Functionality ID | Feature                        |
 |-------------------|------------------|--------------------------------|
-| 25 December, 2025 | **FR-01**        | Page Routing                   |
+| 1 January, 2026   | **FR-01**        | Page Routing                   |
 | N/A               | **FR-02**        | Event Handlers                 |
 | N/A               | **FR-03**        | Navbars                        |
 | N/A               | **FR-03-01**     | Side Panel                     |
