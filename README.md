@@ -48,15 +48,15 @@ ___
 
 ## Feature Calender
 
-| Release Date      | Functionality ID | Feature                        |
-|-------------------|------------------|--------------------------------|
-| 1 January, 2026   | **FR-01**        | Page Routing                   |
-| N/A               | **FR-02**        | Event Handlers                 |
-| N/A               | **FR-03**        | Navbars                        |
-| N/A               | **FR-03-01**     | Side Panel                     |
-| N/A               | **FR-04**        | Component System               |
-| N/A               | **FR-05**        | Simpler Layouts                |
-| N/A               | **FR-06**        | Better ready to use components |
+| Release Date      | Feature                        |
+|-------------------|--------------------------------|
+| N/A               | Page Routing                   |
+| N/A               | Event Handlers                 |
+| N/A               | Navbars                        |
+| N/A               | Side Panel                     |
+| N/A               | Component System               |
+| N/A               | Simpler Layouts                |
+| N/A               | Better ready to use components |
 
 ___
 
