@@ -6,7 +6,7 @@
 
     <groupId>com.junaid</groupId>
     <artifactId>simple-swing</artifactId>
-    <version>0.1-ALPHA</version>
+    <version>0.1</version>
 
     <properties>
         <maven.compiler.source>25</maven.compiler.source>
