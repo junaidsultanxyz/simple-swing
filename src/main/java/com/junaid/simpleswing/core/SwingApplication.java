@@ -1,6 +1,4 @@
-package com.junaid.simpleswing;
-
-import com.junaid.simpleswing.core.Router;
+package com.junaid.simpleswing.core;
 
 import javax.swing.*;
 

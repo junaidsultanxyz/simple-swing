@@ -29,7 +29,7 @@ public class Router {
         ((CardLayout) parent.getLayout() ).show(parent, page);
     }
 
-    public static void populatePages (String basePackage){
+    protected static void populatePages (String basePackage){
         pages.putAll(PageRegistry.scanAndRegister(basePackage));
         homePage = PageRegistry.homePage;
 
@@ -38,11 +38,11 @@ public class Router {
         }
     }
 
-    public static String getHomePage() {
+    protected static String getHomePage() {
         return homePage;
     }
 
-    public static JPanel getParentPanel() {
+    protected static JPanel getParentPanel() {
         return parent;
     }
 }
