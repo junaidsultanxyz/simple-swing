@@ -1,6 +1,7 @@
 package com.junaid.simpleswing.core;
 
 import com.junaid.simpleswing.annotations.Page;
+import com.junaid.simpleswing.components.SimplePage;
 import com.junaid.simpleswing.exceptions.IncompatiblePageException;
 import org.reflections.Reflections;
 import javax.swing.JPanel;
@@ -31,7 +32,7 @@ public class PageRegistry {
 
             try {
                 // Instantiate the user's panel using its no-arg constructor, then the custom render method
-                SimplePage  instance = (SimplePage) clazz.getDeclaredConstructor().newInstance();
+                SimplePage instance = (SimplePage) clazz.getDeclaredConstructor().newInstance();
                 instance.render();
 
                 if (page.home()) {
