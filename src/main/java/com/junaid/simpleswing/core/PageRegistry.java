@@ -1,9 +1,11 @@
 package com.junaid.simpleswing.core;
 
 import com.junaid.simpleswing.annotations.Page;
-import com.junaid.simpleswing.components.SimplePage;
+import com.junaid.simpleswing.components.page.DefaultSimplePage;
+import com.junaid.simpleswing.components.page.SimplePage;
 import com.junaid.simpleswing.exceptions.DuplicatePageException;
 import com.junaid.simpleswing.exceptions.IncompatiblePageException;
+import com.junaid.simpleswing.exceptions.PageException;
 import org.reflections.Reflections;
 import javax.swing.JPanel;
 import java.util.HashMap;
@@ -61,8 +63,16 @@ public class PageRegistry {
             }
         }
 
-        if (homePage == null) {
-            throw new IllegalStateException("No page marked as home. It can be done by @Page(.., home = true)");
+        if (panels.isEmpty()) {
+            homePage = "default";
+
+            SimplePage defaultPage = new DefaultSimplePage();
+            defaultPage.render();
+
+            panels.put(homePage, defaultPage);
+        }
+        else if (homePage == null) {
+            throw new PageException("Home page not set. It is done by @Page(..., home = true)");
         }
 
         return panels;
