@@ -1,4 +1,4 @@
-package com.junaid.simpleswing.components;
+package com.junaid.simpleswing.components.page;
 
 import javax.swing.*;
 

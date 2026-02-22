@@ -1,6 +1,6 @@
 package com.junaid.simpleswing.core;
 
-import com.junaid.simpleswing.components.SimplePage;
+import com.junaid.simpleswing.components.page.SimplePage;
 import com.junaid.simpleswing.exceptions.PageNotFoundException;
 
 import javax.swing.*;
