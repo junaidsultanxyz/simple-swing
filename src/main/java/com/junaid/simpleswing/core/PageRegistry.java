@@ -1,6 +1,8 @@
 package com.junaid.simpleswing.core;
 
 import com.junaid.simpleswing.annotations.Page;
+import com.junaid.simpleswing.components.SimplePage;
+import com.junaid.simpleswing.exceptions.DuplicatePageException;
 import com.junaid.simpleswing.exceptions.IncompatiblePageException;
 import org.reflections.Reflections;
 import javax.swing.JPanel;
@@ -19,10 +21,9 @@ public class PageRegistry {
 
         for (Class<?> clazz : annotatedClasses) {
 
-            // Enforce that the class extends JPanel
-            if (!JPanel.class.isAssignableFrom(clazz)) {
+            if (!SimplePage.class.isAssignableFrom(clazz)) {
                 throw new IncompatiblePageException(
-                        clazz.getName() + " is annotated with @Page but does not extend JPanel"
+                        clazz.getName() + " is annotated with @Page but does not extend SimplePage. Every page must extend SimplePage"
                 );
             }
 
@@ -30,8 +31,7 @@ public class PageRegistry {
             String title = page.title();
 
             try {
-                // Instantiate the user's panel using its no-arg constructor, then the custom render method
-                SimplePage  instance = (SimplePage) clazz.getDeclaredConstructor().newInstance();
+                SimplePage instance = (SimplePage) clazz.getDeclaredConstructor().newInstance();
                 instance.render();
 
                 if (page.home()) {
@@ -43,12 +43,17 @@ public class PageRegistry {
                     homePage = page.title();
                 }
 
-                panels.put(title, instance);
-                System.out.println("Registered page: " + title + " → " + clazz.getName());
+                if (!panels.containsKey(title)){
+                    panels.put(title, instance);
+                }
+                else {
+                    throw new DuplicatePageException(title + " page title already exist. Every page must have unique title");
+                }
+
             }
             catch (NoSuchMethodException e) {
                 throw new IllegalStateException(
-                        clazz.getName() + " must have a public no-arg constructor"
+                        clazz.getName() + " must have a public no-arg constructor, otherwise Router can't use that page"
                 );
             }
             catch (Exception e) {
@@ -57,7 +62,7 @@ public class PageRegistry {
         }
 
         if (homePage == null) {
-            throw new IllegalStateException("No page marked as home");
+            throw new IllegalStateException("No page marked as home. It can be done by @Page(.., home = true)");
         }
 
         return panels;
