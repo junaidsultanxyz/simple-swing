@@ -5,9 +5,9 @@ Simple Swing is a Java Swing framework that simplifies the GUI implementation an
 for new Java programmers.
 
 ___
-## Features
+## Features Implemented
 
-### 1. Page Router
+### 1. Easy Page Routing
 
 Create multiple pages and route between them without any hassle. Easy to maintain and extend.
 
@@ -32,37 +32,29 @@ public class DashboardPage extends SimplePage {
 ```
 
 The default page will be shown when the application starts.
+
+There are 2 more methods to override, `OnInit()` and `OnExit()`, which are called when the page loads or unloads respectively
 ___
-### 2. Simpler event handling
-Removes all the boilerplate that used to be required to define just a simple event handler.
-```java
-@OnEvent()
-JButton button = new JButton("Click Me");
-```
-___
-### 3. Easier Layout Management
+### 2. Easier Layout Management
 Hides all the complex layout function and lets you manage layout in easy and understandable way.
 
 ___
-### 4. Other Features In Plan
-More features are planned to be added in the future like:
-- Auto Multithreading Handling
-- Real time data binding
-- Plug and play components
-- and more...
-
+### 3. Simpler Component System
+Easy to use components without adding 
 ___
 
 ## Feature Plan
 
-| Release Date      | Feature                        |
-|-------------------|--------------------------------|
-| N/A               | Page Router                    |
-| N/A               | Event Handlers                 |
-| N/A               | Navbars                        |
-| N/A               | Side Panel                     |
-| N/A               | Component System               |
-| N/A               | Simpler Layouts                |
+| Feature Planning                       | Status    |
+|----------------------------------------|-----------|
+| Easy Page Routing                      | COMPLETED |
+| Simpler & Better Layout System         | PLANNING  |
+| Basic Simple Components                | PLANNING  |
+| Better Style System for Components     | N/A       |
+| Database Handling & Quering            | N/A       |
+| Multithreading and Dispatcher Handling | N/A       |
+| Reactive Data Binding (Signals)        | N/A       |
+| More Custom Components                 | N/A       |
 
 ___
 
